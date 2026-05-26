@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Makes an English Learning App Actually Work? A Parent's Checklist for Grades 3–10 | Cueword Blog</title>
+  <meta name="description" content="A practical 7-point checklist for parents evaluating English learning apps for kids in grades 3–10. Learn what good apps must do — and how to spot the ones that just waste screen time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --brand:          #5B4FCF;
+      --brand-light:    #EDE9FD;
+      --brand-mid:      #7C72DC;
+      --brand-dark:     #3D35A0;
+      --cta:            #FF5F1F;
+      --cta-hover:      #E04F14;
+      --cta-light:      #FFF4EE;
+      --success:        #059669;
+      --success-light:  #ECFDF5;
+      --text-h:         #18163A;
+      --text-b:         #374151;
+      --text-m:         #6B7280;
+      --border:         #E8E4F7;
+      --bg-page:        #F9F8FF;
+      --white:          #FFFFFF;
+      --footer-bg:      #18163A;
+      --footer-text:    #B0AADC;
+      --footer-head:    #FFFFFF;
+      --radius:         10px;
+      --radius-lg:      16px;
+      --shadow-sm:      0 1px 4px rgba(91,79,207,0.09);
+      --shadow-md:      0 6px 20px rgba(91,79,207,0.14);
+      --max-article:    760px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-b);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+
+    /* ─── SITE HEADER ───────────────────────────────────────────── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 28px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 68px;
+      gap: 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-right: 36px;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      box-shadow: 0 2px 8px rgba(91,79,207,0.3);
+    }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: -0.6px;
+    }
+    .logo-text .accent { color: var(--cta); }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex: 1;
+      list-style: none;
+    }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text-b);
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 7px 13px;
+      border-radius: 7px;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .site-nav a:hover        { background: var(--brand-light); color: var(--brand); }
+    .site-nav a.nav-active   { background: var(--brand-light); color: var(--brand); font-weight: 600; }
+
+    .header-cta {
+      background: var(--cta);
+      color: var(--white);
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 9px;
+      font-size: 14.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(255,95,31,0.3);
+      flex-shrink: 0;
+      letter-spacing: -0.2px;
+    }
+    .header-cta:hover { background: var(--cta-hover); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(255,95,31,0.36); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      margin-left: auto;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-h); border-radius: 2px; transition: all 0.2s;
+    }
+
+    /* ─── BREADCRUMB ────────────────────────────────────────────── */
+    .breadcrumb-bar {
+      background: var(--bg-page);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 28px;
+    }
+    .breadcrumb-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 13.5px;
+      color: var(--text-m);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .breadcrumb-inner a { color: var(--brand); text-decoration: none; }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .bc-sep { margin: 0 7px; opacity: 0.4; }
+    .bc-current { color: var(--text-m); }
+
+    /* ─── POST HERO ─────────────────────────────────────────────── */
+    .post-hero {
+      max-width: 860px;
+      margin: 52px auto 0;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .post-category-tag {
+      display: inline-block;
+      background: var(--brand-light);
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 20px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .post-category-tag:hover { background: #D9D4FA; }
+
+    .post-title {
+      font-size: clamp(26px, 4.2vw, 42px);
+      font-weight: 800;
+      color: var(--text-h);
+      line-height: 1.22;
+      letter-spacing: -0.7px;
+      margin-bottom: 20px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--text-m);
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .meta-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .author-avatar {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--brand-light) 0%, #D9D4FA 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--brand);
+      border: 1.5px solid var(--brand-light);
+    }
+    .meta-sep { color: var(--border); font-size: 16px; }
+
+    /* ─── IMAGE PLACEHOLDERS ────────────────────────────────────── */
+    .featured-image-wrap {
+      max-width: 920px;
+      margin: 0 auto 52px;
+      padding: 0 24px;
+    }
+    .img-placeholder {
+      background: linear-gradient(135deg, #EDE9FD 0%, #F7F5FF 60%, #FFF4EE 100%);
+      border: 2px dashed #C4BFED;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 44px 32px;
+      text-align: center;
+      min-height: 320px;
+    }
+    .img-placeholder.short { min-height: 220px; }
+    .img-placeholder.tall  { min-height: 400px; }
+    .img-placeholder-icon  { font-size: 36px; margin-bottom: 14px; opacity: 0.45; }
+    .img-placeholder-name  {
+      font-size: 12.5px; font-weight: 700; color: var(--brand);
+      background: rgba(255,255,255,0.9); padding: 4px 14px; border-radius: 20px;
+      margin-bottom: 12px; font-family: 'Courier New', monospace;
+      border: 1px solid var(--border);
+    }
+    .img-placeholder-alt {
+      font-size: 13px; color: var(--text-m); max-width: 580px;
+      line-height: 1.55; font-style: italic;
+    }
+    .article-img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 24px rgba(91,79,207,0.1);
+    }
+    .article-figure { margin: 2.2em 0; }
+    .article-figure figcaption {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px; color: var(--text-m);
+      text-align: center; margin-top: 11px; font-style: italic;
+    }
+
+    /* ─── ARTICLE BODY ──────────────────────────────────────────── */
+    .post-body-wrap {
+      max-width: calc(var(--max-article) + 48px);
+      margin: 0 auto;
+      padding: 0 24px 90px;
+    }
+    .post-body {
+      font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      line-height: 1.78;
+      color: var(--text-b);
+    }
+    .post-body p              { margin-bottom: 1.35em; }
+    .post-body strong         { color: var(--text-h); font-weight: 700; }
+    .post-body em             { font-style: italic; }
+    .post-body h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(20px, 3vw, 27px);
+      font-weight: 800;
+      color: var(--text-h);
+      line-height: 1.28;
+      margin: 2.6em 0 0.8em;
+      letter-spacing: -0.4px;
+      padding-top: 0.2em;
+    }
+    .post-body h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 19px; font-weight: 700;
+      color: var(--text-h); margin: 1.8em 0 0.5em;
+    }
+    .post-body ul, .post-body ol { margin: 0.4em 0 1.3em 1.6em; }
+    .post-body li { margin-bottom: 0.45em; }
+
+    /* ─── TABLE OF CONTENTS ─────────────────────────────────────── */
+    .toc {
+      background: var(--bg-page);
+      border-left: 4px solid var(--brand);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 22px 26px;
+      margin: 0 0 2.2em;
+    }
+    .toc-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--brand); margin-bottom: 14px;
+    }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 500;
+      color: var(--text-b); margin-bottom: 7px; line-height: 1.45;
+    }
+    .toc a { color: var(--text-b); text-decoration: none; transition: color 0.15s; }
+    .toc a:hover { color: var(--brand); }
+
+    /* ─── SKILLS GRID ───────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 14px;
+      margin: 1.2em 0 2.2em;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--brand); }
+    .skill-icon  { font-size: 26px; margin-bottom: 11px; display: block; }
+    .skill-name  {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; font-weight: 700;
+      color: var(--text-h); margin-bottom: 6px;
+    }
+    .skill-desc  {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px; color: var(--text-m); line-height: 1.52;
+    }
+
+    /* ─── CHECKLIST ─────────────────────────────────────────────── */
+    .checklist { display: flex; flex-direction: column; gap: 12px; margin: 1.4em 0 2.2em; }
+    .checklist-item {
+      display: flex; gap: 15px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .checklist-item:hover { border-color: var(--brand); box-shadow: var(--shadow-md); }
+    .check-num {
+      flex-shrink: 0; width: 32px; height: 32px;
+      background: var(--brand);
+      color: var(--white); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 800;
+      margin-top: 1px;
+    }
+    .check-body {}
+    .check-q {
+      font-family: 'Inter', sans-serif;
+      font-size: 15.5px; font-weight: 700;
+      color: var(--text-h); margin-bottom: 5px; line-height: 1.4;
+    }
+    .check-a {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; color: var(--text-m); line-height: 1.55;
+    }
+
+    /* ─── QUOTE CARD ────────────────────────────────────────────── */
+    .quote-card {
+      background: var(--text-h);
+      border-radius: var(--radius-lg);
+      padding: 38px 42px;
+      margin: 2.4em 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-card::before {
+      content: '\201C';
+      position: absolute; top: -12px; left: 24px;
+      font-size: 130px; color: rgba(255,255,255,0.05);
+      font-family: Georgia, serif; line-height: 1; pointer-events: none;
+    }
+    .quote-card blockquote {
+      font-size: clamp(19px, 3vw, 25px);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic; color: var(--white);
+      line-height: 1.5; position: relative; z-index: 1;
+    }
+    .quote-src {
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px; color: rgba(255,255,255,0.45);
+      margin-top: 14px; letter-spacing: 0.3px;
+    }
+
+    /* ─── STEP CARDS ────────────────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 14px; margin: 1.4em 0 2.2em; }
+    .step-card {
+      display: flex; gap: 18px;
+      background: var(--bg-page);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      border-left: 4px solid var(--cta);
+    }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: var(--cta); color: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 800;
+      margin-top: 1px; box-shadow: 0 2px 6px rgba(255,95,31,0.28);
+    }
+    .step-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 15.5px; font-weight: 700;
+      color: var(--text-h); margin-bottom: 6px;
+    }
+    .step-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; color: var(--text-b); line-height: 1.62;
+    }
+
+    /* ─── INLINE CTA BOX ────────────────────────────────────────── */
+    .cta-inline {
+      background: linear-gradient(135deg, var(--brand-light) 0%, #F2F0FF 100%);
+      border: 1.5px solid #CCC7F0;
+      border-radius: var(--radius-lg);
+      padding: 30px 34px;
+      margin: 2.6em 0;
+      text-align: center;
+    }
+    .cta-inline p {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; color: var(--text-b); margin-bottom: 18px; line-height: 1.65;
+    }
+    .cta-inline strong { color: var(--text-h); }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--cta); color: var(--white);
+      text-decoration: none;
+      padding: 12px 28px; border-radius: 9px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 700;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(255,95,31,0.28);
+      letter-spacing: -0.1px;
+    }
+    .btn-primary:hover { background: var(--cta-hover); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(255,95,31,0.36); }
+
+    /* ─── EXERCISE CARDS ────────────────────────────────────────── */
+    .exercise-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 1.2em 0 2em;
+    }
+    .exercise-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      border-top: 4px solid var(--brand);
+      box-shadow: var(--shadow-sm);
+    }
+    .exercise-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 700; color: var(--brand); margin-bottom: 10px;
+    }
+    .exercise-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px; color: var(--text-b); line-height: 1.62;
+    }
+
+    /* ─── FAQ ───────────────────────────────────────────────────── */
+    .faq-list {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1.4em 0 2.4em;
+    }
+    .faq-item { border-bottom: 1.5px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: 'Inter', sans-serif;
+      font-size: 15.5px; font-weight: 600; color: var(--text-h);
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
+      transition: background 0.15s;
+      user-select: none;
+      list-style: none;
+      line-height: 1.4;
+    }
+    .faq-q:hover      { background: var(--bg-page); }
+    .faq-q.faq-open   { background: var(--bg-page); color: var(--brand); }
+    .faq-arrow        { flex-shrink: 0; font-size: 11px; color: var(--text-m); transition: transform 0.25s; margin-top: 3px; }
+    .faq-q.faq-open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 2px 20px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; color: var(--text-b); line-height: 1.68;
+      background: var(--bg-page);
+    }
+    .faq-a em { font-style: italic; }
+    .faq-a.faq-open { display: block; }
+
+    /* ─── BOTTOM CTA BLOCK ──────────────────────────────────────── */
+    .cta-bottom {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 50px 40px;
+      text-align: center;
+      margin: 3.2em 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bottom::before {
+      content: ''; position: absolute; top: -70px; right: -70px;
+      width: 220px; height: 220px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .cta-bottom::after {
+      content: ''; position: absolute; bottom: -50px; left: -50px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.04); border-radius: 50%;
+    }
+    .cta-bottom h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800; color: var(--white);
+      margin-bottom: 10px; letter-spacing: -0.4px;
+      position: relative; z-index: 1;
+    }
+    .cta-bottom p {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; color: rgba(255,255,255,0.75);
+      margin-bottom: 26px; position: relative; z-index: 1;
+    }
+    .btn-cta-large {
+      display: inline-block;
+      background: var(--cta); color: var(--white);
+      text-decoration: none; padding: 15px 36px;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 800;
+      letter-spacing: -0.2px;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 18px rgba(255,95,31,0.4);
+      position: relative; z-index: 1;
+    }
+    .btn-cta-large:hover { background: var(--cta-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,95,31,0.46); }
+    .cta-fine {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px; color: rgba(255,255,255,0.45);
+      margin-top: 14px; position: relative; z-index: 1;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 64px 28px 0;
+      margin-top: 88px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {}
+    .footer-logo-link {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; margin-bottom: 13px;
+    }
+    .footer-logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px;
+    }
+    .footer-logo-text { font-size: 21px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .footer-logo-text .accent { color: var(--cta); }
+    .footer-tagline { font-size: 13.5px; color: var(--footer-text); max-width: 230px; line-height: 1.62; }
+
+    .footer-trial {
+      text-align: right;
+    }
+    .footer-trial p {
+      font-size: 13.5px; color: var(--footer-text);
+      margin-bottom: 12px; line-height: 1.6;
+    }
+    .btn-footer-cta {
+      display: inline-block; background: var(--cta); color: var(--white);
+      text-decoration: none; padding: 10px 22px; border-radius: 8px;
+      font-size: 14px; font-weight: 700;
+      transition: background 0.15s;
+    }
+    .btn-footer-cta:hover { background: var(--cta-hover); }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 36px;
+      margin-bottom: 44px;
+    }
+
+    .footer-col-title {
+      font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .footer-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      color: var(--footer-text); text-decoration: none;
+      font-size: 12.5px; padding: 5px 11px; border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .footer-tag:hover { background: var(--brand); color: var(--white); }
+
+    .footer-links-list { list-style: none; }
+    .footer-links-list li { margin-bottom: 9px; }
+    .footer-links-list a {
+      color: var(--footer-text); text-decoration: none;
+      font-size: 13.5px; transition: color 0.15s;
+    }
+    .footer-links-list a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.28); }
+    .footer-legal-links { display: flex; gap: 20px; }
+    .footer-legal-links a {
+      color: rgba(255,255,255,0.28); text-decoration: none;
+      font-size: 12.5px; transition: color 0.15s;
+    }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hamburger   { display: flex; }
+      .site-nav    { display: none; }
+      .header-cta  { display: none; }
+      .footer-trial { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .post-hero, .featured-image-wrap, .post-body-wrap { padding-left: 16px; padding-right: 16px; }
+      .post-body { font-size: 17px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .exercise-pair { grid-template-columns: 1fr; }
+      .quote-card { padding: 30px 24px; }
+      .cta-bottom { padding: 38px 24px; }
+      .cta-inline { padding: 24px 20px; }
+      .site-footer { padding: 40px 16px 0; }
+      .footer-links-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-top-row { flex-direction: column; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="Cueword home">
+      <div class="logo-icon">🦊</div>
+      <div class="logo-text">Cue<span class="accent">word</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="#">English Skills</a></li>
+        <li><a href="#" class="nav-active">For Parents</a></li>
+        <li><a href="#">Learning Tips</a></li>
+        <li><a href="#">By Grade</a></li>
+        <li><a href="#">Inside Cueword</a></li>
+      </ul>
+    </nav>
+    <a href="https://www.cueword.com/" class="header-cta">Try Free →</a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BREADCRUMB
+═══════════════════════════════════════════════════════════════ -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="#">Blog</a><span class="bc-sep">/</span>
+    <a href="#">For Parents</a><span class="bc-sep">/</span>
+    <span class="bc-current">What Makes an English Learning App Actually Work?</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN ARTICLE
+═══════════════════════════════════════════════════════════════ -->
+<main>
+
+  <!-- POST HERO -->
+  <div class="post-hero">
+    <a href="#" class="post-category-tag">For Parents</a>
+    <h1 class="post-title">What Makes an English Learning App Actually Work?<br>A Parent's Checklist for Grades 3–10</h1>
+    <div class="post-meta">
+      <div class="meta-author">
+        <div class="author-avatar">CW</div>
+        <span>Cueword Editorial</span>
+      </div>
+      <span class="meta-sep">|</span>
+      <span>May 26, 2026</span>
+      <span class="meta-sep">|</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image-wrap">
+    <figure class="article-figure">
+      <img class="article-img" src="Images/english-app-checklist-evaluation-hero.webp" alt="A tablet on a kitchen table displaying an English learning app interface, beside a handwritten checklist on paper and a pencil — suggesting a parent evaluating whether an app is right for their child in grades 3–10">
+    </figure>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="post-body-wrap">
+    <div class="post-body">
+
+      <p>Finding the right English learning app for kids sounds easy — until you've downloaded four of them and your child is writing the same kinds of sentences six months later.</p>
+
+      <p>Most apps look impressive with bright colors, friendly characters, and glowing reviews. You download one, your child uses it for a few weeks, and then nothing changes. Their teacher still sends home the same feedback. Their essays still sound the same. They still freeze when asked to speak in front of the class.</p>
+
+      <p>This isn't your child's fault. And it's not yours either. <strong>The problem lies in the app.</strong></p>
+
+      <p>Most English apps are built to keep kids using them, not to make kids better. There is a difference. This checklist will help you see it clearly.</p>
+
+      <!-- TABLE OF CONTENTS -->
+      <nav class="toc" aria-label="Article contents">
+        <div class="toc-label">Overview</div>
+        <ol>
+          <li><a href="#schools-vs-apps">What Schools Expect vs. What Apps Deliver</a></li>
+          <li><a href="#what-kids-need">What Kids in Grades 3–10 Actually Need</a></li>
+          <li><a href="#five-skills">The Five Skills That Compound</a></li>
+          <li><a href="#checklist">The 7-Point Checklist: What a Good English App Must Do</a></li>
+          <li><a href="#how-to-use">How to Use This Checklist</a></li>
+          <li><a href="#not-ready">Not Ready to Download Anything Yet? Try These Two Things Tonight</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <!-- ── Section 1 ── -->
+      <h2 id="schools-vs-apps">What Schools Expect vs. What Apps Deliver</h2>
+
+      <p>By 3rd grade, most children have cracked the code of reading. They know how letters form sounds, how words form sentences. That milestone — called "decoding" — is what beginner apps are built to teach.</p>
+
+      <p>But grades 3 through 10 demand something very different. Teachers are not just checking whether your child can read. They are asking: <strong>Can they explain what they read? Can they argue a point in writing? Can they present an idea without stumbling? Can they listen carefully and respond with precision?</strong></p>
+
+      <p>These are communication skills, and they require fundamentally different practice than the exercises most apps offer. Most apps have not caught up to this reality.</p>
+
+      <!-- ── Section 2 ── -->
+      <h2 id="what-kids-need">What Kids in Grades 3–10 Actually Need</h2>
+
+      <p>Beginner language apps (like Khan Academy Kids, Duolingo ABC, Lingokids etc.) do an excellent job teaching foundational literacy — letters, phonics, early reading. If your child is in K–2, those tools are genuinely valuable.</p>
+
+      <p>But if your child is in 3rd grade or beyond, they've already cleared that bar. What they need now is a dedicated space to practice the skills that make a real difference in school and beyond.</p>
+
+      <!-- ── Section 3 ── -->
+      <h2 id="five-skills">The Five Skills That Compound</h2>
+
+      <p>Think of English communication as five skills that grow together:</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <span class="skill-icon">✍️</span>
+          <div class="skill-name">Writing Depth</div>
+          <div class="skill-desc">Moving from "I like dogs because they are fun" to a structured argument with supporting evidence.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🗣️</span>
+          <div class="skill-name">Spoken Fluency</div>
+          <div class="skill-desc">Speaking confidently in complete sentences, without trailing off or searching for words.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">📖</span>
+          <div class="skill-name">Active Vocabulary</div>
+          <div class="skill-desc">Knowing not just what a word means, but when and how to use it.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🔍</span>
+          <div class="skill-name">Reading Inference</div>
+          <div class="skill-desc">Understanding what a text implies, not only what it says.</div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">👂</span>
+          <div class="skill-name">Listening Comprehension</div>
+          <div class="skill-desc">Following multi-step information and responding accurately.</div>
+        </div>
+      </div>
+
+      <figure class="article-figure">
+        <img class="article-img" src="Images/five-english-skills-compound-diagram.webp" alt="A diagram showing the five compounding English communication skills — writing depth, spoken fluency, active vocabulary, reading inference, and listening comprehension — as interconnected elements">
+        <figcaption>The five compounding skills of English communication — each one strengthens the others.</figcaption>
+      </figure>
+
+      <!-- ── Section 4 ── -->
+      <h2 id="checklist">The 7-Point Checklist: What a Good English App Must Do</h2>
+
+      <p>Use this to evaluate any app you are considering. <strong>A strong app should answer yes to most of these.</strong></p>
+
+      <div class="checklist">
+
+        <div class="checklist-item">
+          <div class="check-num">1</div>
+          <div class="check-body">
+            <div class="check-q">Does it cover all five language skills, not just one?</div>
+            <div class="check-a">Vocabulary alone is not English. Reading alone is not English. All five skills need to be in the mix.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">2</div>
+          <div class="check-body">
+            <div class="check-q">Does it give feedback specific enough to act on?</div>
+            <div class="check-a">Not stars. Not "great job." Actual notes — for example: <em>this sentence is unclear because</em>, or <em>try a stronger verb here</em>.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">3</div>
+          <div class="check-body">
+            <div class="check-q">Is it built for grades 3–10, not beginners or adults?</div>
+            <div class="check-a">The content, pacing, and complexity should match where your child actually is.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">4</div>
+          <div class="check-body">
+            <div class="check-q">Does it build a daily habit without turning into a screen-time spiral?</div>
+            <div class="check-a">Structured sessions with a clear end point beat open-ended apps with no stopping mechanism.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">5</div>
+          <div class="check-body">
+            <div class="check-q">Can you, as the parent, actually see what is improving?</div>
+            <div class="check-a">Weekly skill-by-skill progress reports — not just a "minutes used" counter.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">6</div>
+          <div class="check-body">
+            <div class="check-q">Is it ad-free and COPPA-compliant?</div>
+            <div class="check-a">No ads. No data selling. Nothing pulling your child somewhere else mid-session.</div>
+          </div>
+        </div>
+
+        <div class="checklist-item">
+          <div class="check-num">7</div>
+          <div class="check-body">
+            <div class="check-q">Does it adapt as your child improves?</div>
+            <div class="check-a">An app that stays at the same difficulty level forever isn't teaching — it's babysitting.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quote visual -->
+      <figure class="article-figure">
+        <img class="article-img" src="Images/english-app-feedback-quote-visual.webp" alt="A typographic quote card reading 'Most apps are built to keep kids using them — not to make kids better' against a white background">
+      </figure>
+
+      <!-- ── Section 5 ── -->
+      <h2 id="how-to-use">How to Use This Checklist</h2>
+
+      <div class="steps">
+
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Run any app you're considering against all seven criteria.</div>
+            <div class="step-desc">Check the app's website, read recent parent reviews, and spend 10 minutes using it yourself before handing it to your child. The App Store screenshots rarely show you what the feedback actually looks like.</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">Filter by your child's specific gap.</div>
+            <div class="step-desc">If speaking is the main struggle, weight criteria 1, 2, and 3 most heavily. If writing is the issue, criteria 1, 2, and 7 matter most. Be specific about what you're trying to fix. A well-rounded app is only worth paying for if your child actually needs all-round support.</div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">Use the trial window intentionally.</div>
+            <div class="step-desc">Any app worth paying for offers a free trial. During those days, sit with your child once and watch them use it. Look at what the feedback actually says. Pull up the parent dashboard and ask yourself: does this tell me anything useful?</div>
+          </div>
+        </div>
+
+      </div>
+
+      <figure class="article-figure">
+        <img class="article-img" src="Images/parent-evaluating-app-trial-checklist.webp" alt="An illustration of a parent watching a child use an English learning app on a tablet, with a checklist visible nearby — showing how to use a free trial intentionally">
+        <figcaption>Using a free trial intentionally means sitting through one session with your child.</figcaption>
+      </figure>
+
+      <!-- Mid-article CTA -->
+      <div class="cta-inline">
+        <p><strong>Cueword</strong> is an English language app for grades 3–10, built for all-round English skill development with real, specific feedback.</p>
+        <a href="https://www.cueword.com/" class="btn-primary">See how Cueword ranks on these 7 points →</a>
+      </div>
+
+      <!-- ── Section 6 ── -->
+      <h2 id="not-ready">Not Ready to Download Anything Yet? Try These Two Things Tonight</h2>
+
+      <p>If you want to understand your child's actual English gap before committing to any app, two quick exercises take less than 10 minutes each. What they reveal will make you a much sharper judge of what your child needs.</p>
+
+      <p>These quick exercises will give you a clear window into your child's strengths and gaps. It will give you the confidence to choose what really helps them grow.</p>
+
+      <figure class="article-figure">
+        <img class="article-img" src="Images/child-reading-retelling-opinion-writing-exercise.webp" alt="A split illustration showing two simple home exercises — a child retelling a story aloud on the left, and a child writing a short opinion response on the right — for parents assessing English skills before choosing an app">
+        <figcaption>Two exercises that reveal more than any app demo will.</figcaption>
+      </figure>
+
+      <div class="exercise-pair">
+        <div class="exercise-card">
+          <h3>The 3-Minute Retelling Test</h3>
+          <p>Read a short paragraph aloud together from a book they already know. Then ask them to tell you, in their own words, what it meant. Don't prompt. Just listen. Are they summarizing facts or drawing inferences? Are they using vocabulary from the passage or defaulting to simpler words? Are they speaking in complete sentences or trailing off? The answers point directly to the skill gap.</p>
+        </div>
+        <div class="exercise-card">
+          <h3>The Opinion Writing Prompt</h3>
+          <p>Give them one sentence to respond to: <em>"What is one thing you would change about your school, and why?"</em> Read what they write — not for grammar, but for whether they can support a point with a reason. This is the skill that separates 3rd grade writing from 5th grade writing, and it is the one thing most apps never actually address.</p>
+        </div>
+      </div>
+
+      <!-- ── Section 7: FAQ ── -->
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What is the most important feature to look for in an English learning app for kids?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Specific, actionable feedback — not stars or badges. An app that tells your child <em>why</em> something is wrong and how to improve is doing the work of a tutor. An app that just marks answers right or wrong is doing the work of a worksheet. For grades 3–10, this difference is what determines whether your child actually improves over time or just clocks screen hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Is Duolingo good for kids learning English in grades 3–10?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            It is a solid vocabulary and habit-building tool, but it was not designed to develop writing, speaking fluency, or reading inference for school-age kids. For grades 3–10 who need to grow their communication skills — and not just their word list — Duolingo works best as a supplement alongside a more complete practice tool, not as the primary one.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>How much time should a child spend on an English app each day?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Consistency matters more than duration. Ten to fifteen focused minutes daily produces better results than an hour once a week — that holds true across most language learning research. Look for apps with a defined session length and a natural stopping point. Apps with no built-in limit tend to drift from practice into entertainment.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Are AI English apps safe for kids?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            It depends on the specific app. Look for COPPA compliance, confirmation that the app doesn't sell or share user data, no in-app advertising, and a parent dashboard that keeps you informed. Before downloading any app for a child, check the privacy policy.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What grade level should an English learning app target?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Most popular English apps are designed for early learners — K through 2nd grade. If your child is in 3rd grade or above, look specifically for apps built for the 3–10 range, where the focus shifts from learning to read to using reading, writing, and speaking as tools for thinking. The content complexity, feedback depth, and skill scope should all reflect that shift.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM CTA -->
+      <div class="cta-bottom">
+        <h2>10 minutes a day to better English Communication</h2>
+        <p>Cueword offers a 7-day free trial with full access — no charge until day 7.</p>
+        <a href="https://www.cueword.com/" class="btn-cta-large">Try Cueword free for 7 days →</a>
+        <div class="cta-fine">No payment until day 7 &nbsp;·&nbsp; Cancel anytime</div>
+      </div>
+
+    </div><!-- /.post-body -->
+  </div><!-- /.post-body-wrap -->
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-inner">
+
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo-link">
+          <div class="footer-logo-icon">🦊</div>
+          <div class="footer-logo-text">Cue<span class="accent">word</span></div>
+        </a>
+        <div class="footer-tagline">10 minutes a day to better English Communication — for grades 3–10.</div>
+      </div>
+      <div class="footer-trial">
+        <p>7-day free trial · full access · no card needed</p>
+        <a href="https://www.cueword.com/" class="btn-footer-cta">Start free →</a>
+      </div>
+    </div>
+
+    <div class="footer-links-grid">
+
+      <div>
+        <div class="footer-col-title">By Skill</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Vocabulary</a>
+          <a href="#" class="footer-tag">Reading</a>
+          <a href="#" class="footer-tag">Listening</a>
+          <a href="#" class="footer-tag">Speaking</a>
+          <a href="#" class="footer-tag">Writing</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">By Grade Level</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Elementary School English (3–5)</a>
+          <a href="#" class="footer-tag">Middle School English (6–8)</a>
+          <a href="#" class="footer-tag">Upper Grades (9–10)</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Content Type</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Learning Tips</a>
+          <a href="#" class="footer-tag">For Parents</a>
+          <a href="#" class="footer-tag">Research &amp; Insights</a>
+          <a href="#" class="footer-tag">Activity Ideas</a>
+          <a href="#" class="footer-tag">App Updates</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links-list">
+          <li><a href="#">About Cueword</a></li>
+          <li><a href="#">Download App</a></li>
+          <li><a href="#">Free Trial</a></li>
+          <li><a href="#">Parent Dashboard</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Cueword · A Cuelearn product · All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">COPPA Compliance</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════════════ -->
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = this.nextElementSibling;
+      var isOpen = answer.classList.contains('faq-open');
+      // close all
+      document.querySelectorAll('.faq-a.faq-open').forEach(function(a) { a.classList.remove('faq-open'); });
+      document.querySelectorAll('.faq-q.faq-open').forEach(function(q) {
+        q.classList.remove('faq-open');
+        q.setAttribute('aria-expanded', 'false');
+      });
+      // open clicked (if it was closed)
+      if (!isOpen) {
+        answer.classList.add('faq-open');
+        this.classList.add('faq-open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+    // keyboard support
+    btn.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+    });
+  });
+</script>
+
+</body>
+</html>

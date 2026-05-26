@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cueword Blog — English Learning for Grades 3–10</title>
+  <meta name="description" content="Tips, research, and guides for parents and educators helping kids in grades 3–10 build real English communication skills.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --brand:          #5B4FCF;
+      --brand-light:    #EDE9FD;
+      --brand-mid:      #7C72DC;
+      --brand-dark:     #3D35A0;
+      --cta:            #FF5F1F;
+      --cta-hover:      #E04F14;
+      --cta-light:      #FFF4EE;
+      --text-h:         #18163A;
+      --text-b:         #374151;
+      --text-m:         #6B7280;
+      --border:         #E8E4F7;
+      --bg-page:        #F9F8FF;
+      --white:          #FFFFFF;
+      --footer-bg:      #18163A;
+      --footer-text:    #B0AADC;
+      --radius:         10px;
+      --radius-lg:      16px;
+      --shadow-sm:      0 1px 4px rgba(91,79,207,0.09);
+      --shadow-md:      0 6px 20px rgba(91,79,207,0.14);
+      --shadow-lg:      0 12px 36px rgba(91,79,207,0.18);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-b);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    /* ─── SITE HEADER ───────────────────────────────────────────── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 28px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 68px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; flex-shrink: 0; margin-right: 36px;
+    }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 21px;
+      box-shadow: 0 2px 8px rgba(91,79,207,0.3);
+    }
+    .logo-text { font-size: 22px; font-weight: 800; color: var(--brand); letter-spacing: -0.6px; }
+    .logo-text .accent { color: var(--cta); }
+
+    .site-nav {
+      display: flex; align-items: center; gap: 2px;
+      flex: 1; list-style: none;
+    }
+    .site-nav a {
+      text-decoration: none; color: var(--text-b);
+      font-size: 14.5px; font-weight: 500;
+      padding: 7px 13px; border-radius: 7px;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .site-nav a:hover      { background: var(--brand-light); color: var(--brand); }
+    .site-nav a.nav-active { background: var(--brand-light); color: var(--brand); font-weight: 600; }
+
+    .header-cta {
+      background: var(--cta); color: var(--white);
+      text-decoration: none; padding: 9px 22px; border-radius: 9px;
+      font-size: 14.5px; font-weight: 700; white-space: nowrap;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(255,95,31,0.3); flex-shrink: 0; letter-spacing: -0.2px;
+    }
+    .header-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 4px; flex-direction: column; gap: 5px; margin-left: auto;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-h); border-radius: 2px; }
+
+    /* ─── BLOG HERO ─────────────────────────────────────────────── */
+    .blog-hero {
+      background: linear-gradient(160deg, var(--brand-light) 0%, #F2F0FF 50%, var(--white) 100%);
+      border-bottom: 1.5px solid var(--border);
+      padding: 72px 28px 64px;
+      text-align: center;
+    }
+    .blog-hero-label {
+      display: inline-block;
+      background: var(--white);
+      color: var(--brand);
+      font-size: 12px; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      margin-bottom: 20px;
+      border: 1.5px solid var(--border);
+    }
+    .blog-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800; color: var(--text-h);
+      letter-spacing: -1px; line-height: 1.18;
+      margin-bottom: 18px;
+    }
+    .blog-hero h1 span { color: var(--brand); }
+    .blog-hero p {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--text-m); max-width: 540px;
+      margin: 0 auto 32px; line-height: 1.7;
+    }
+    .hero-filter-bar {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .filter-pill {
+      display: inline-block;
+      background: var(--white); color: var(--text-b);
+      text-decoration: none; font-size: 13.5px; font-weight: 500;
+      padding: 7px 16px; border-radius: 20px;
+      border: 1.5px solid var(--border);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-pill:hover       { border-color: var(--brand); color: var(--brand); background: var(--brand-light); }
+    .filter-pill.pill-active { background: var(--brand); color: var(--white); border-color: var(--brand); }
+
+    /* ─── PAGE LAYOUT ───────────────────────────────────────────── */
+    .blog-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 28px 88px;
+    }
+
+    /* ─── SECTION LABELS ────────────────────────────────────────── */
+    .section-label {
+      font-size: 11.5px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--text-m); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ─── FEATURED POST ─────────────────────────────────────────── */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 64px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .featured-post:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+    .featured-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+    }
+    .featured-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .featured-post:hover .featured-img img { transform: scale(1.04); }
+    .featured-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, rgba(255,255,255,0.08));
+    }
+
+    .featured-content {
+      padding: 40px 40px 36px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .featured-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--cta-light); color: var(--cta);
+      font-size: 11.5px; font-weight: 700;
+      padding: 5px 12px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.6px;
+      margin-bottom: 18px; width: fit-content;
+      border: 1px solid rgba(255,95,31,0.2);
+    }
+    .featured-badge::before { content: '★'; font-size: 10px; }
+    .featured-content h2 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 800; color: var(--text-h);
+      line-height: 1.3; letter-spacing: -0.4px;
+      margin-bottom: 14px;
+    }
+    .featured-content p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px; color: var(--text-b);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+    .featured-meta {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--text-m); margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .meta-cat {
+      background: var(--brand-light); color: var(--brand);
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 600;
+    }
+    .btn-read {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--brand); color: var(--white);
+      padding: 11px 24px; border-radius: 9px;
+      font-size: 14.5px; font-weight: 700;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(91,79,207,0.28);
+      width: fit-content;
+      text-decoration: none;
+    }
+    .btn-read:hover { background: var(--brand-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(91,79,207,0.36); }
+    .btn-read-arrow { font-size: 16px; transition: transform 0.2s; }
+    .btn-read:hover .btn-read-arrow { transform: translateX(3px); }
+
+    /* ─── POST GRID ─────────────────────────────────────────────── */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .post-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .post-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--brand); }
+
+    .post-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden; position: relative;
+      background: var(--bg-page);
+    }
+    .post-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; transition: transform 0.35s ease;
+    }
+    .post-card:hover .post-card-img img { transform: scale(1.05); }
+
+    /* Placeholder for cards without images */
+    .post-card-img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, var(--brand-light) 0%, #F2F0FF 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px; opacity: 0.5;
+    }
+
+    .post-card-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+    .post-card-cat {
+      display: inline-block;
+      background: var(--brand-light); color: var(--brand);
+      font-size: 11.5px; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .post-card-title {
+      font-size: 17px; font-weight: 800; color: var(--text-h);
+      line-height: 1.35; letter-spacing: -0.3px;
+      margin-bottom: 10px;
+    }
+    .post-card-excerpt {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 14.5px; color: var(--text-m);
+      line-height: 1.65; flex: 1; margin-bottom: 18px;
+    }
+    .post-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; color: var(--text-m);
+      border-top: 1px solid var(--border); padding-top: 14px; margin-top: auto;
+    }
+    .read-link {
+      color: var(--brand); font-weight: 600; font-size: 13.5px;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    /* ─── COMING SOON CARD ──────────────────────────────────────── */
+    .post-card.coming-soon {
+      opacity: 0.55; pointer-events: none;
+    }
+    .coming-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--text-h); color: var(--white);
+      font-size: 10.5px; font-weight: 700;
+      padding: 4px 10px; border-radius: 6px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    /* ─── NEWSLETTER STRIP ──────────────────────────────────────── */
+    .newsletter-strip {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 44px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px; margin-top: 64px; flex-wrap: wrap;
+      position: relative; overflow: hidden;
+    }
+    .newsletter-strip::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .newsletter-text { position: relative; z-index: 1; }
+    .newsletter-text h3 {
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 800; color: var(--white);
+      margin-bottom: 6px; letter-spacing: -0.3px;
+    }
+    .newsletter-text p { font-size: 15px; color: rgba(255,255,255,0.7); }
+    .newsletter-form {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+    .newsletter-input {
+      padding: 11px 18px; border-radius: 9px;
+      border: none; font-size: 14.5px;
+      font-family: 'Inter', sans-serif;
+      width: 240px; outline: none;
+      background: rgba(255,255,255,0.95);
+      color: var(--text-h);
+    }
+    .newsletter-input::placeholder { color: var(--text-m); }
+    .newsletter-btn {
+      background: var(--cta); color: var(--white);
+      border: none; padding: 11px 22px; border-radius: 9px;
+      font-size: 14.5px; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .newsletter-btn:hover { background: var(--cta-hover); }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 64px 28px 0;
+      margin-top: 88px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 32px; padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .footer-logo-link {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; margin-bottom: 13px;
+    }
+    .footer-logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 19px;
+    }
+    .footer-logo-text { font-size: 21px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .footer-logo-text .accent { color: var(--cta); }
+    .footer-tagline { font-size: 13.5px; color: var(--footer-text); max-width: 230px; line-height: 1.62; }
+    .footer-trial p { font-size: 13.5px; color: var(--footer-text); margin-bottom: 12px; line-height: 1.6; }
+    .btn-footer-cta {
+      display: inline-block; background: var(--cta); color: #fff;
+      text-decoration: none; padding: 10px 22px; border-radius: 8px;
+      font-size: 14px; font-weight: 700; transition: background 0.15s;
+    }
+    .btn-footer-cta:hover { background: var(--cta-hover); }
+    .footer-links-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 36px; margin-bottom: 44px;
+    }
+    .footer-col-title {
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1.2px; color: rgba(255,255,255,0.35); margin-bottom: 16px;
+    }
+    .footer-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .footer-tag {
+      display: inline-block; background: rgba(255,255,255,0.08);
+      color: var(--footer-text); text-decoration: none;
+      font-size: 12.5px; padding: 5px 11px; border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .footer-tag:hover { background: var(--brand); color: #fff; }
+    .footer-links-list { list-style: none; }
+    .footer-links-list li { margin-bottom: 9px; }
+    .footer-links-list a {
+      color: var(--footer-text); text-decoration: none;
+      font-size: 13.5px; transition: color 0.15s;
+    }
+    .footer-links-list a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.28); }
+    .footer-legal-links { display: flex; gap: 20px; }
+    .footer-legal-links a {
+      color: rgba(255,255,255,0.28); text-decoration: none;
+      font-size: 12.5px; transition: color 0.15s;
+    }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-img { min-height: 260px; }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .site-nav  { display: none; }
+      .header-cta { display: none; }
+      .newsletter-strip { flex-direction: column; padding: 36px 28px; }
+      .newsletter-input { width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .blog-main { padding: 40px 16px 64px; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .footer-links-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-top-row { flex-direction: column; }
+      .site-footer { padding: 40px 16px 0; }
+      .featured-content { padding: 28px 24px; }
+      .blog-hero { padding: 52px 20px 48px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cueword home">
+      <div class="logo-icon">🦊</div>
+      <div class="logo-text">Cue<span class="accent">word</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="#">English Skills</a></li>
+        <li><a href="#">For Parents</a></li>
+        <li><a href="#">Learning Tips</a></li>
+        <li><a href="#">By Grade</a></li>
+        <li><a href="#">Inside Cueword</a></li>
+      </ul>
+    </nav>
+    <a href="https://www.cueword.com/" class="header-cta">Try Free →</a>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BLOG HERO
+═══════════════════════════════════════════════════════════════ -->
+<div class="blog-hero">
+  <div class="blog-hero-label">The Cueword Blog</div>
+  <h1>English skills that actually <span>stick</span></h1>
+  <p>Tips, research, and guides for parents helping kids in grades 3–10 build real communication skills — not just screen time.</p>
+  <div class="hero-filter-bar">
+    <a href="#" class="filter-pill pill-active">All Posts</a>
+    <a href="#" class="filter-pill">English Skills</a>
+    <a href="#" class="filter-pill">For Parents</a>
+    <a href="#" class="filter-pill">Learning Tips</a>
+    <a href="#" class="filter-pill">By Grade</a>
+    <a href="#" class="filter-pill">Inside Cueword</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════════════════════════ -->
+<div class="blog-main">
+
+  <!-- FEATURED POST -->
+  <div class="section-label">Featured</div>
+
+  <a href="blog-post-01.html" class="featured-post">
+    <div class="featured-img">
+      <img src="Images/english-app-checklist-evaluation-hero.webp"
+           alt="A parent evaluating an English learning app on a tablet with a checklist beside it">
+      <div class="featured-img-overlay"></div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-badge">Featured Post</div>
+      <h2>What Makes an English Learning App Actually Work? A Parent's Checklist for Grades 3–10</h2>
+      <p>Most apps are built to keep kids using them — not to make kids better. This 7-point checklist helps you tell the difference before you download anything.</p>
+      <div class="featured-meta">
+        <span class="meta-cat">For Parents</span>
+        <span>May 26, 2026</span>
+        <span>9 min read</span>
+      </div>
+      <span class="btn-read">
+        Read article <span class="btn-read-arrow">→</span>
+      </span>
+    </div>
+  </a>
+
+  <!-- LATEST POSTS GRID -->
+  <div class="section-label">Latest Posts</div>
+
+  <div class="posts-grid">
+
+    <!-- Post 1 — live -->
+    <a href="blog-post-01.html" class="post-card">
+      <div class="post-card-img">
+        <img src="Images/parent-evaluating-app-trial-checklist.webp"
+             alt="Parent and child evaluating a learning app together">
+      </div>
+      <div class="post-card-body">
+        <span class="post-card-cat">For Parents</span>
+        <div class="post-card-title">What Makes an English Learning App Actually Work? A Parent's Checklist for Grades 3–10</div>
+        <div class="post-card-excerpt">Seven questions to ask before downloading any English app for your child — and how to use the free trial window correctly.</div>
+        <div class="post-card-footer">
+          <span>May 26, 2026 · 9 min</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 2 — coming soon -->
+    <div class="post-card coming-soon">
+      <div class="post-card-img">
+        <div class="post-card-img-placeholder">✍️</div>
+        <span class="coming-badge">Coming Soon</span>
+      </div>
+      <div class="post-card-body">
+        <span class="post-card-cat">English Skills</span>
+        <div class="post-card-title">Why Writing is the Hardest Skill to Teach — and the Easiest to Improve</div>
+        <div class="post-card-excerpt">Most kids plateau at paragraph-level writing because no one shows them the gap between what they mean and what they wrote.</div>
+        <div class="post-card-footer">
+          <span>Coming June 2026</span>
+          <span class="read-link">Soon →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 3 — coming soon -->
+    <div class="post-card coming-soon">
+      <div class="post-card-img">
+        <div class="post-card-img-placeholder">📖</div>
+        <span class="coming-badge">Coming Soon</span>
+      </div>
+      <div class="post-card-body">
+        <span class="post-card-cat">Learning Tips</span>
+        <div class="post-card-title">The 10-Minute Daily Habit That Changes How Kids Read</div>
+        <div class="post-card-excerpt">Short daily practice beats long weekly sessions — here's the research behind it and a simple routine any family can build.</div>
+        <div class="post-card-footer">
+          <span>Coming June 2026</span>
+          <span class="read-link">Soon →</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEWSLETTER STRIP -->
+  <div class="newsletter-strip">
+    <div class="newsletter-text">
+      <h3>New articles, straight to your inbox</h3>
+      <p>One email a week. Parent-focused. No spam, ever.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Your email address">
+      <button class="newsletter-btn">Subscribe →</button>
+    </div>
+  </div>
+
+</div><!-- /.blog-main -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-inner">
+
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-link">
+          <div class="footer-logo-icon">🦊</div>
+          <div class="footer-logo-text">Cue<span class="accent">word</span></div>
+        </a>
+        <div class="footer-tagline">10 minutes a day to better English Communication — for grades 3–10.</div>
+      </div>
+      <div class="footer-trial">
+        <p>7-day free trial · full access · no card needed</p>
+        <a href="https://www.cueword.com/" class="btn-footer-cta">Start free →</a>
+      </div>
+    </div>
+
+    <div class="footer-links-grid">
+      <div>
+        <div class="footer-col-title">By Skill</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Vocabulary</a>
+          <a href="#" class="footer-tag">Reading</a>
+          <a href="#" class="footer-tag">Listening</a>
+          <a href="#" class="footer-tag">Speaking</a>
+          <a href="#" class="footer-tag">Writing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">By Grade Level</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Elementary School English (3–5)</a>
+          <a href="#" class="footer-tag">Middle School English (6–8)</a>
+          <a href="#" class="footer-tag">Upper Grades (9–10)</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Content Type</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Learning Tips</a>
+          <a href="#" class="footer-tag">For Parents</a>
+          <a href="#" class="footer-tag">Research &amp; Insights</a>
+          <a href="#" class="footer-tag">Activity Ideas</a>
+          <a href="#" class="footer-tag">App Updates</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links-list">
+          <li><a href="#">About Cueword</a></li>
+          <li><a href="#">Download App</a></li>
+          <li><a href="#">Free Trial</a></li>
+          <li><a href="#">Parent Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Cueword · A Cuelearn product · All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">COPPA Compliance</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

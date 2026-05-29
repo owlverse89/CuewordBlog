@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocab Games for Road Trips, Dinner Tables, and the 5 Minutes Before Bed | Cueword Blog</title>
+  <meta name="description" content="No prep, no materials — vocabulary games to play with your child in the time you were already going to spend together. Road trips, dinner tables, and bedtime.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --brand:          #5B4FCF;
+      --brand-light:    #EDE9FD;
+      --brand-mid:      #7C72DC;
+      --brand-dark:     #3D35A0;
+      --cta:            #FF5F1F;
+      --cta-hover:      #E04F14;
+      --cta-light:      #FFF4EE;
+      --success:        #059669;
+      --success-light:  #ECFDF5;
+      --text-h:         #18163A;
+      --text-b:         #374151;
+      --text-m:         #6B7280;
+      --border:         #E8E4F7;
+      --bg-page:        #F9F8FF;
+      --white:          #FFFFFF;
+      --footer-bg:      #18163A;
+      --footer-text:    #B0AADC;
+      --footer-head:    #FFFFFF;
+      --radius:         10px;
+      --radius-lg:      16px;
+      --shadow-sm:      0 1px 4px rgba(91,79,207,0.09);
+      --shadow-md:      0 6px 20px rgba(91,79,207,0.14);
+      --max-article:    760px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text-b);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 17px;
+    }
+
+    /* ─── SITE HEADER ───────────────────────────────────────────── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 28px;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 68px;
+      gap: 0;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; flex-shrink: 0; margin-right: 36px;
+    }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 21px;
+      box-shadow: 0 2px 8px rgba(91,79,207,0.3);
+    }
+    .logo-text { font-size: 22px; font-weight: 800; color: var(--brand); letter-spacing: -0.6px; }
+    .logo-text .accent { color: var(--cta); }
+
+    .site-nav {
+      display: flex; align-items: center; gap: 2px;
+      flex: 1; list-style: none;
+    }
+    .site-nav a {
+      text-decoration: none; color: var(--text-b);
+      font-size: 13.5px; font-weight: 500;
+      padding: 7px 11px; border-radius: 7px;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .site-nav a:hover      { background: var(--brand-light); color: var(--brand); }
+    .site-nav a.nav-active { background: var(--brand-light); color: var(--brand); font-weight: 600; }
+
+    .header-cta {
+      background: var(--cta); color: var(--white);
+      text-decoration: none; padding: 9px 22px; border-radius: 9px;
+      font-size: 14.5px; font-weight: 700; white-space: nowrap;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(255,95,31,0.3); flex-shrink: 0; letter-spacing: -0.2px;
+    }
+    .header-cta:hover { background: var(--cta-hover); transform: translateY(-1px); }
+
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 4px; flex-direction: column; gap: 5px; margin-left: auto;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-h); border-radius: 2px; }
+
+    /* ─── BREADCRUMB ────────────────────────────────────────────── */
+    .breadcrumb-bar {
+      background: var(--bg-page);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 28px;
+    }
+    .breadcrumb-inner {
+      max-width: 1200px; margin: 0 auto;
+      font-size: 13.5px; color: var(--text-m);
+      display: flex; align-items: center; flex-wrap: wrap;
+    }
+    .breadcrumb-inner a { color: var(--brand); text-decoration: none; }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .bc-sep { margin: 0 7px; opacity: 0.4; }
+    .bc-current { color: var(--text-m); }
+
+    /* ─── POST HERO ─────────────────────────────────────────────── */
+    .post-hero {
+      max-width: 860px; margin: 52px auto 0; padding: 0 24px; text-align: center;
+    }
+    .post-category-tag {
+      display: inline-block; background: var(--brand-light); color: var(--brand);
+      font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 20px;
+      text-decoration: none; transition: background 0.15s;
+    }
+    .post-category-tag:hover { background: #D9D4FA; }
+    .post-title {
+      font-size: clamp(26px, 4.2vw, 42px); font-weight: 800; color: var(--text-h);
+      line-height: 1.22; letter-spacing: -0.7px; margin-bottom: 20px;
+      max-width: 820px; margin-left: auto; margin-right: auto;
+    }
+    .post-meta {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; font-size: 14px; color: var(--text-m); margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .meta-author { display: flex; align-items: center; gap: 8px; }
+    .author-avatar {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--brand-light) 0%, #D9D4FA 100%);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 11.5px; font-weight: 800; color: var(--brand); border: 1.5px solid var(--brand-light);
+    }
+    .meta-sep { color: var(--border); font-size: 16px; }
+
+    /* ─── IMAGES ────────────────────────────────────────────────── */
+    .featured-image-wrap { max-width: 920px; margin: 0 auto 52px; padding: 0 24px; }
+    .article-img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); box-shadow: 0 4px 24px rgba(91,79,207,0.1); }
+    .article-figure { margin: 2.2em 0; }
+    .article-figure figcaption { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-m); text-align: center; margin-top: 11px; font-style: italic; }
+
+    /* ─── ARTICLE BODY ──────────────────────────────────────────── */
+    .post-body-wrap { max-width: calc(var(--max-article) + 48px); margin: 0 auto; padding: 0 24px 90px; }
+    .post-body { font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.78; color: var(--text-b); }
+    .post-body p              { margin-bottom: 1.35em; }
+    .post-body strong         { color: var(--text-h); font-weight: 700; }
+    .post-body em             { font-style: italic; }
+    .post-body h2 {
+      font-family: 'Inter', sans-serif; font-size: clamp(20px, 3vw, 27px); font-weight: 800;
+      color: var(--text-h); line-height: 1.28; margin: 2.6em 0 0.8em; letter-spacing: -0.4px; padding-top: 0.2em;
+    }
+    .post-body h3 { font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 700; color: var(--text-h); margin: 1.8em 0 0.5em; }
+    .post-body ul, .post-body ol { margin: 0.4em 0 1.3em 1.6em; }
+    .post-body li { margin-bottom: 0.45em; }
+
+    /* ─── TABLE OF CONTENTS ─────────────────────────────────────── */
+    .toc { background: var(--bg-page); border-left: 4px solid var(--brand); border-radius: 0 var(--radius) var(--radius) 0; padding: 22px 26px; margin: 0 0 2.2em; }
+    .toc-label { font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--brand); margin-bottom: 14px; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { font-family: 'Inter', sans-serif; font-size: 14.5px; font-weight: 500; color: var(--text-b); margin-bottom: 7px; line-height: 1.45; }
+    .toc a { color: var(--text-b); text-decoration: none; transition: color 0.15s; }
+    .toc a:hover { color: var(--brand); }
+
+    /* ─── GAME CARDS ────────────────────────────────────────────── */
+    .games-list { display: flex; flex-direction: column; gap: 16px; margin: 1.2em 0 2em; }
+    .game-card {
+      background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius);
+      padding: 22px 24px; border-left: 4px solid var(--brand); box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .game-card:hover { border-color: var(--brand-mid); box-shadow: var(--shadow-md); }
+    .game-card h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-h); margin-bottom: 10px; }
+    .game-card-body { font-family: 'Inter', sans-serif; font-size: 14.5px; color: var(--text-b); line-height: 1.62; margin-bottom: 12px; }
+    .game-builds { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-m); padding-top: 10px; border-top: 1px solid var(--border); }
+    .game-builds strong { color: var(--brand); font-weight: 600; }
+
+    /* ─── QUOTE CARD ────────────────────────────────────────────── */
+    .quote-card {
+      background: var(--text-h); border-radius: var(--radius-lg);
+      padding: 38px 42px; margin: 2.4em 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .quote-card::before {
+      content: '\201C'; position: absolute; top: -12px; left: 24px;
+      font-size: 130px; color: rgba(255,255,255,0.05); font-family: Georgia, serif; line-height: 1; pointer-events: none;
+    }
+    .quote-card blockquote {
+      font-size: clamp(19px, 3vw, 25px); font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic; color: var(--white); line-height: 1.5; position: relative; z-index: 1;
+    }
+    .quote-src { font-family: 'Inter', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.45); margin-top: 14px; letter-spacing: 0.3px; }
+
+    /* ─── INLINE CTA ────────────────────────────────────────────── */
+    .cta-inline {
+      background: linear-gradient(135deg, var(--brand-light) 0%, #F2F0FF 100%);
+      border: 1.5px solid #CCC7F0; border-radius: var(--radius-lg);
+      padding: 30px 34px; margin: 2.6em 0; text-align: center;
+    }
+    .cta-inline p { font-family: 'Inter', sans-serif; font-size: 16px; color: var(--text-b); margin-bottom: 18px; line-height: 1.65; }
+    .cta-inline strong { color: var(--text-h); }
+    .btn-primary {
+      display: inline-block; background: var(--cta); color: var(--white); text-decoration: none;
+      padding: 12px 28px; border-radius: 9px; font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 700; transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(255,95,31,0.28); letter-spacing: -0.1px;
+    }
+    .btn-primary:hover { background: var(--cta-hover); transform: translateY(-1px); }
+
+    /* ─── RESEARCH CALLOUT ──────────────────────────────────────── */
+    .research-callout {
+      background: var(--success-light); border: 1.5px solid #A7F3D0; border-radius: var(--radius);
+      padding: 18px 22px; margin: 1.4em 0;
+      font-family: 'Inter', sans-serif; font-size: 14.5px; color: #065F46; line-height: 1.6;
+    }
+    .research-callout strong { font-weight: 700; }
+
+    /* ─── FAQ ───────────────────────────────────────────────────── */
+    .faq-list { border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 1.4em 0 2.4em; }
+    .faq-item { border-bottom: 1.5px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: 'Inter', sans-serif; font-size: 15.5px; font-weight: 600; color: var(--text-h);
+      padding: 18px 20px; cursor: pointer;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
+      transition: background 0.15s; user-select: none; line-height: 1.4;
+    }
+    .faq-q:hover      { background: var(--bg-page); }
+    .faq-q.faq-open   { background: var(--bg-page); color: var(--brand); }
+    .faq-arrow        { flex-shrink: 0; font-size: 11px; color: var(--text-m); transition: transform 0.25s; margin-top: 3px; }
+    .faq-q.faq-open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none; padding: 2px 20px 18px;
+      font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-b); line-height: 1.68; background: var(--bg-page);
+    }
+    .faq-a.faq-open { display: block; }
+
+    /* ─── BOTTOM CTA ────────────────────────────────────────────── */
+    .cta-bottom {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      border-radius: var(--radius-lg); padding: 50px 40px; text-align: center; margin: 3.2em 0 0;
+      position: relative; overflow: hidden;
+    }
+    .cta-bottom::before {
+      content: ''; position: absolute; top: -70px; right: -70px;
+      width: 220px; height: 220px; background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .cta-bottom::after {
+      content: ''; position: absolute; bottom: -50px; left: -50px;
+      width: 160px; height: 160px; background: rgba(255,255,255,0.04); border-radius: 50%;
+    }
+    .cta-bottom h2 {
+      font-family: 'Inter', sans-serif; font-size: clamp(22px, 3.5vw, 32px); font-weight: 800;
+      color: var(--white); margin-bottom: 10px; letter-spacing: -0.4px; position: relative; z-index: 1;
+    }
+    .cta-bottom p { font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 26px; position: relative; z-index: 1; }
+    .btn-cta-large {
+      display: inline-block; background: var(--cta); color: var(--white); text-decoration: none;
+      padding: 15px 36px; border-radius: 10px; font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 800; letter-spacing: -0.2px;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 18px rgba(255,95,31,0.4); position: relative; z-index: 1;
+    }
+    .btn-cta-large:hover { background: var(--cta-hover); transform: translateY(-2px); }
+    .cta-fine { font-family: 'Inter', sans-serif; font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 14px; position: relative; z-index: 1; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .site-footer { background: var(--footer-bg); color: var(--footer-text); padding: 64px 28px 0; margin-top: 88px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 44px; flex-wrap: wrap; }
+    .footer-logo-link { display: flex; align-items: center; gap: 9px; text-decoration: none; margin-bottom: 13px; }
+    .footer-logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 19px; }
+    .footer-logo-text { font-size: 21px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .footer-logo-text .accent { color: var(--cta); }
+    .footer-tagline { font-size: 13.5px; color: var(--footer-text); max-width: 230px; line-height: 1.62; }
+    .footer-trial { text-align: right; }
+    .footer-trial p { font-size: 13.5px; color: var(--footer-text); margin-bottom: 12px; line-height: 1.6; }
+    .btn-footer-cta { display: inline-block; background: var(--cta); color: var(--white); text-decoration: none; padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 700; transition: background 0.15s; }
+    .btn-footer-cta:hover { background: var(--cta-hover); }
+    .footer-links-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; margin-bottom: 44px; }
+    .footer-col-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .footer-tag { display: inline-block; background: rgba(255,255,255,0.08); color: var(--footer-text); text-decoration: none; font-size: 12.5px; padding: 5px 11px; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .footer-tag:hover { background: var(--brand); color: var(--white); }
+    .footer-links-list { list-style: none; }
+    .footer-links-list li { margin-bottom: 9px; }
+    .footer-links-list a { color: var(--footer-text); text-decoration: none; font-size: 13.5px; transition: color 0.15s; }
+    .footer-links-list a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 20px 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-copy { font-size: 12.5px; color: rgba(255,255,255,0.28); }
+    .footer-legal-links { display: flex; gap: 20px; }
+    .footer-legal-links a { color: rgba(255,255,255,0.28); text-decoration: none; font-size: 12.5px; transition: color 0.15s; }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 900px) { .footer-links-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; } .site-nav { display: none; } .header-cta { display: none; } .footer-trial { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .post-hero, .featured-image-wrap, .post-body-wrap { padding-left: 16px; padding-right: 16px; }
+      .post-body { font-size: 17px; } .quote-card { padding: 30px 24px; }
+      .cta-bottom { padding: 38px 24px; } .cta-inline { padding: 24px 20px; }
+      .site-footer { padding: 40px 16px 0; } .footer-links-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-top-row { flex-direction: column; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cueword home">
+      <div class="logo-icon">🦊</div>
+      <div class="logo-text">Cue<span class="accent">word</span></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        <li><a href="index.html">English Skills</a></li>
+        <li><a href="index.html">Parent Pathways</a></li>
+        <li><a href="index.html" class="nav-active">Learning Tips</a></li>
+        <li><a href="index.html">Insights</a></li>
+        <li><a href="index.html">Impact Stories</a></li>
+        <li><a href="index.html">Inside Cueword</a></li>
+      </ul>
+    </nav>
+    <a href="https://www.cueword.com/" class="header-cta">Try Free →</a>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Blog</a><span class="bc-sep">/</span>
+    <a href="index.html">Learning Tips</a><span class="bc-sep">/</span>
+    <span class="bc-current">Vocab Games for Road Trips, Dinner Tables, and the 5 Minutes Before Bed</span>
+  </div>
+</div>
+
+<!-- MAIN ARTICLE -->
+<main>
+
+  <!-- POST HERO -->
+  <div class="post-hero">
+    <a href="index.html" class="post-category-tag">Learning Tips</a>
+    <h1 class="post-title">Vocab Games for Road Trips, Dinner Tables, and the 5 Minutes Before Bed</h1>
+    <div class="post-meta">
+      <div class="meta-author">
+        <div class="author-avatar">CW</div>
+        <span>Cueword Editorial</span>
+      </div>
+      <span class="meta-sep">|</span>
+      <span>May 2026</span>
+      <span class="meta-sep">|</span>
+      <span>5 min read</span>
+    </div>
+  </div>
+
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image-wrap">
+    <figure class="article-figure">
+      <img class="article-img" src="Images/vocab-games-everyday-moments-hero.webp"
+           alt="A flat-lay illustration of three everyday objects — a car window view, a dinner table with food, and a bedside lamp — representing vocabulary games for road trips, dinner tables, and bedtime">
+    </figure>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <div class="post-body-wrap">
+    <div class="post-body">
+
+      <p>The best vocabulary lesson your child had this year probably didn't happen in a classroom. It happened when they were stuck in the back seat for three hours, or waiting for dinner that was taking too long, or wired at 9 PM when they should have been asleep.</p>
+
+      <p><strong>Kids don't need a worksheet to learn words. They need a reason to play with language.</strong> These games give them that — no prep, no materials, no convincing required. Just time you were already going to spend together.</p>
+
+      <!-- TABLE OF CONTENTS -->
+      <nav class="toc" aria-label="Article contents">
+        <div class="toc-label">Overview</div>
+        <ol>
+          <li><a href="#road-trip">Road Trip Vocab Games</a></li>
+          <li><a href="#dinner-table">Dinner Table Vocab Games</a></li>
+          <li><a href="#bedtime">The 5 Minutes Before Bed</a></li>
+          <li><a href="#why-it-works">Why Informal Games Build Real Vocabulary</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <!-- ── Section 1 ── -->
+      <h2 id="road-trip">Road Trip Vocab Games</h2>
+
+      <figure class="article-figure">
+        <img class="article-img" src="Images/road-trip-vocab-games-car-window.webp"
+             alt="Car interior view from the back seat looking out at an open road with trees — the road trip setting for vocabulary games with kids">
+        <figcaption>Three hours in the back seat is more than enough time to build vocabulary range.</figcaption>
+      </figure>
+
+      <div class="games-list">
+
+        <div class="game-card">
+          <h3>Last Letter</h3>
+          <div class="game-card-body">One person says a word. The next must say a word that starts with the last letter of the previous word. No repeating. The longer the chain goes, the harder it gets — and the more obscure the vocabulary becomes. That's the whole point.</div>
+          <div class="game-builds"><strong>What it builds:</strong> vocabulary range · recall speed · spelling awareness</div>
+        </div>
+
+        <div class="game-card">
+          <h3>Category Countdown</h3>
+          <div class="game-card-body">Pick a category — animals, foods, things in a kitchen, things that are loud — and take turns naming things that fit. The round ends when someone can't think of a new one. Start simple and push toward more abstract categories as the trip goes on: <em>things that feel heavy</em>, <em>words that describe a storm</em>, <em>things you can't see but know are there</em>. Older kids find the abstract rounds genuinely hard.</div>
+          <div class="game-builds"><strong>What it builds:</strong> word retrieval · meaning grouping · descriptive vocabulary</div>
+        </div>
+
+        <div class="game-card">
+          <h3>Word Twist</h3>
+          <div class="game-card-body">One person says a base word. The next player must change it by adding a prefix, suffix, or tweaking the root — then use the new word in a sentence. Example: <em>hope → hopeful → hopefully → hopeless</em>. Keep going until the chain breaks. The constraint forces players to think about how words are built, not just what they mean.</div>
+          <div class="game-builds"><strong>What it builds:</strong> word root awareness (prefixes &amp; suffixes) · sentence construction · vocabulary expansion through word families</div>
+        </div>
+
+      </div>
+
+      <!-- ── Section 2 ── -->
+      <h2 id="dinner-table">Dinner Table Vocab Games</h2>
+
+      <div class="games-list">
+
+        <div class="game-card">
+          <h3>Word Chef</h3>
+          <div class="game-card-body">Pick a food on the table (or any dish you like). Each person must add one descriptive word to "season" it — adjectives, sensory words, or even silly ones. Example: <em>Spicy. Crunchy. Golden. Mysterious.</em> Keep going until someone repeats or gets stuck. The goal isn't to be accurate — it's to reach for unusual words.</div>
+          <div class="game-builds"><strong>What it builds:</strong> adjective use · sensory vocabulary · quick thinking</div>
+        </div>
+
+        <div class="game-card">
+          <h3>Word Swap</h3>
+          <div class="game-card-body">Take any sentence someone just said at the table. One player replaces a word with a synonym or near-synonym. The next player replaces another word. Keep going until the sentence has changed completely — but still makes sense. The harder the swap, the more points. <em>"The food is good"</em> can become <em>"The cuisine is exceptional"</em> in just two rounds.</div>
+          <div class="game-builds"><strong>What it builds:</strong> synonym range · vocabulary flexibility · recall speed</div>
+        </div>
+
+        <div class="game-card">
+          <h3>Metaphor Maker</h3>
+          <div class="game-card-body">Take an object at the table. Each person must complete the sentence: <em>"[Object] is like _____ because _____."</em> Simple comparisons are easy — push for unexpected ones. Whoever makes the most surprising metaphor wins the round. Older children will surprise you once they stop defaulting to the obvious.</div>
+          <div class="game-builds"><strong>What it builds:</strong> figurative language · creative expression · descriptive vocabulary</div>
+        </div>
+
+      </div>
+
+      <div class="quote-card">
+        <blockquote>"Kids don't need a worksheet to learn words. They need a reason to play with language."</blockquote>
+        <div class="quote-src">— Cueword Editorial</div>
+      </div>
+
+      <!-- ── Section 3 ── -->
+      <h2 id="bedtime">The 5 Minutes Before Bed</h2>
+
+      <div class="games-list">
+
+        <div class="game-card">
+          <h3>One Word, One Sentence</h3>
+          <div class="game-card-body">At the end of the day, each person names one word they heard, read, or thought about today that felt new or interesting. Everyone tries to use it in a sentence. Done in three minutes. The goal is to build the habit of <em>noticing</em> language — which is the foundation everything else is built on.</div>
+          <div class="game-builds"><strong>What it builds:</strong> vocabulary attention · memory consolidation · daily word awareness</div>
+        </div>
+
+        <div class="game-card">
+          <h3>Echo &amp; Expand</h3>
+          <div class="game-card-body">One person says a word. The next must repeat it and add one new descriptive word. Then the next player repeats the growing phrase and adds another. Example: <em>rain → cold rain → cold driving rain → cold driving rain at midnight</em>. Keep going until someone can't remember the chain or gets genuinely stuck.</div>
+          <div class="game-builds"><strong>What it builds:</strong> memory &amp; sequencing · adjective layering · descriptive fluency</div>
+        </div>
+
+      </div>
+
+      <!-- Cueword plug -->
+      <div class="cta-inline">
+        <p>When there's a bit more time before bed, a <strong>Cueword session</strong> covers vocabulary, writing, speaking, reading, and listening in a single focused block of around 10–15 minutes. Sessions are designed to end cleanly — there's no "just one more" drift. And unlike the games above, Cueword gives your child specific AI feedback on what they actually wrote and said.</p>
+        <a href="https://www.cueword.com/" class="btn-primary">Try Cueword free for 7 days →</a>
+      </div>
+
+      <!-- ── Section 4 ── -->
+      <h2 id="why-it-works">Why Informal Games Build Real Vocabulary</h2>
+
+      <figure class="article-figure">
+        <img class="article-img" src="Images/vocabulary-words-context-retention-illustration.webp"
+             alt="An abstract illustration showing a single phrase branching outward into multiple connected contexts — representing how repeated encounters in different settings help vocabulary stick for kids">
+        <figcaption>Vocabulary sticks when words are encountered across many different contexts — not just once on a flashcard.</figcaption>
+      </figure>
+
+      <p>Research on vocabulary learning shows that words stick best when children meet them in many different contexts, not just once on a flashcard or worksheet. Informal games create those repeated encounters: a word is heard, spoken, reshaped, and remembered in the middle of play. Each new use adds another layer of meaning, turning the word from something abstract into something familiar and usable.</p>
+
+      <div class="research-callout">
+        <strong>American Educational Research Association (AERA, 2012):</strong> Game-based learning environments improve vocabulary acquisition and motivation, especially when children encounter words socially and repeatedly.
+      </div>
+
+      <p>Because the games are social and playful, they also attach words to experiences — laughter at the dinner table, a challenge on a car ride, a bedtime routine. That connection makes vocabulary <em>durable</em>: words aren't just memorized, they're lived.</p>
+
+      <!-- ── Section 5: FAQ ── -->
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What are good vocab games to play in the car with kids?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Last Letter, Category Countdown, and Word Twist all need zero materials and work across a wide age range. For younger children, Category Countdown with concrete categories (animals, foods, things in a kitchen) is the easiest entry point. Word Twist scales naturally as kids get older — the word families get longer and the sentence-building gets more demanding. All three work in the front-and-back-seat format without anyone needing to look at a screen.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Can dinner table word games actually improve a child's vocabulary?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Yes — and the mechanism matters. Word Chef, Word Swap, and Metaphor Maker don't drill definitions; they create situations where your child has to use a word <em>actively</em>, in context. Research on vocabulary acquisition consistently shows that varied contextual exposure produces better long-term retention than definition study alone. The dinner table also adds something a worksheet can't: the word gets attached to a moment, which makes it stick.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>How long should a bedtime vocab game take?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Three to five minutes is plenty for One Word, One Sentence or Echo &amp; Expand. Both are designed to wind down, not rev up. If you want something structured with measurable progress, a 10–15 minute Cueword session is designed to end cleanly and fits naturally into a before-bed slot with a real stopping point.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Do vocab games help with school performance?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Vocabulary knowledge is one of the strongest predictors of reading comprehension, which underlies nearly every subject in Grades 3–10. Kids who are regularly exposed to varied vocabulary — even informally — consistently outperform peers on reading, writing, and content-area tests. The effect compounds: a richer vocabulary makes reading easier, which builds vocabulary further.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What vocab games work across both younger (grades 3–5) and older (grades 6–10) kids?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            Category Countdown and Word Swap work across both ranges with minimal adjustment. Younger kids stick to common synonyms and concrete categories; older kids get pushed toward abstract descriptors and less familiar vocabulary. Metaphor Maker is surprisingly effective with older children — the creative constraint becomes genuinely challenging once they're expected to move beyond simple similes.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM CTA -->
+      <div class="cta-bottom">
+        <h2>10 minutes a day to better English Communication</h2>
+        <p>Cueword offers a 7-day free trial with full access — no charge until day 7.</p>
+        <a href="https://www.cueword.com/" class="btn-cta-large">Try Cueword free for 7 days →</a>
+        <div class="cta-fine">No payment until day 7 &nbsp;·&nbsp; Cancel anytime</div>
+      </div>
+
+    </div><!-- /.post-body -->
+  </div><!-- /.post-body-wrap -->
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-link">
+          <div class="footer-logo-icon">🦊</div>
+          <div class="footer-logo-text">Cue<span class="accent">word</span></div>
+        </a>
+        <div class="footer-tagline">10 minutes a day to better English Communication — for grades 3–10.</div>
+      </div>
+      <div class="footer-trial">
+        <p>7-day free trial · full access · no card needed</p>
+        <a href="https://www.cueword.com/" class="btn-footer-cta">Start free →</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div>
+        <div class="footer-col-title">By Skill</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Vocabulary</a>
+          <a href="#" class="footer-tag">Reading</a>
+          <a href="#" class="footer-tag">Listening</a>
+          <a href="#" class="footer-tag">Speaking</a>
+          <a href="#" class="footer-tag">Writing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">By Grade Level</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Elementary School English (3–5)</a>
+          <a href="#" class="footer-tag">Middle School English (6–8)</a>
+          <a href="#" class="footer-tag">Upper Grades (9–10)</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Content Type</div>
+        <div class="footer-tags">
+          <a href="#" class="footer-tag">Learning Tips</a>
+          <a href="#" class="footer-tag">For Parents</a>
+          <a href="#" class="footer-tag">Research &amp; Insights</a>
+          <a href="#" class="footer-tag">Activity Ideas</a>
+          <a href="#" class="footer-tag">App Updates</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links-list">
+          <li><a href="#">About Cueword</a></li>
+          <li><a href="#">Download App</a></li>
+          <li><a href="#">Free Trial</a></li>
+          <li><a href="#">Parent Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Cueword · A Cuelearn product · All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">COPPA Compliance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = this.nextElementSibling;
+      var isOpen = answer.classList.contains('faq-open');
+      document.querySelectorAll('.faq-a.faq-open').forEach(function(a) { a.classList.remove('faq-open'); });
+      document.querySelectorAll('.faq-q.faq-open').forEach(function(q) { q.classList.remove('faq-open'); q.setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { answer.classList.add('faq-open'); this.classList.add('faq-open'); this.setAttribute('aria-expanded', 'true'); }
+    });
+    btn.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); } });
+  });
+</script>
+
+</body>
+</html>
